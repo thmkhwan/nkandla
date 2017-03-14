@@ -28,11 +28,10 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
+    public void testEnums()
     {
-        assertTrue( true );
+        assertEquals(PersonTypeEnums.President, 0);
+        assertEquals(PersonTypeEnums.Lawyer, 0);
+        assertEquals(PersonTypeEnums.Architect, 0);
     }
 }
