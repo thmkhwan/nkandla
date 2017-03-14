@@ -28,10 +28,18 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    public void testEnums()
+    public void testEnumsPres()
     {
-        assertEquals(PersonTypeEnums.President, 0);
-        assertEquals(PersonTypeEnums.Lawyer, 0);
-        assertEquals(PersonTypeEnums.Architect, 0);
+        assertEquals(0, PersonTypeEnums.personType.President.rank);
+    }
+    
+    public void testEnumsLaw()
+    {
+        assertEquals(1, PersonTypeEnums.personType.Lawyer.rank);
+    }
+
+    public void testEnumsArc()
+    {
+        assertEquals(2, PersonTypeEnums.personType.Architect.rank);
     }
 }
