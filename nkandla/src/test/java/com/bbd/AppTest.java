@@ -32,7 +32,7 @@ public class AppTest
     {
         assertEquals(0, PersonTypeEnums.personType.President.rank);
     }
-    
+
     public void testEnumsLaw()
     {
         assertEquals(1, PersonTypeEnums.personType.Lawyer.rank);
@@ -41,5 +41,29 @@ public class AppTest
     public void testEnumsArc()
     {
         assertEquals(2, PersonTypeEnums.personType.Architect.rank);
+    }
+
+    @before
+    public void testHSName()
+    {
+        assertEquals("Nkandla", Homestead.getName);
+    }
+
+    @before
+    public void testHSDist()
+    {
+        assertEquals("9", Homestead.getDistrict);
+    }
+
+    @before
+    public void testHSProv()
+    {
+        assertEquals("KZN", Homestead.getProvince);
+    }
+
+    @before
+    public void testHSCountry()
+    {
+        assertEquals("RSA", Homestead.getCountry);
     }
 }
