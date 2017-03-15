@@ -5,9 +5,9 @@ public class Person {
     private String name;
     private int age;
     private String gender;
-    private PersonTypeEnums type;
+    private PersonTypeEnums.personType type;
 
-    Person(String name, int age, String gender, PersonTypeEnums personType) {
+    Person(String name, int age, String gender, PersonTypeEnums.personType personType) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -28,7 +28,7 @@ public class Person {
         this.gender = g;
     }
 
-    public void setType(PersonTypeEnums t){
+    public void setType(PersonTypeEnums.personType t){
         this.type = t;
     } 
 
@@ -45,7 +45,7 @@ public class Person {
         return this.gender;
     }
     
-    public PersonTypeEnums getType(){
+    public PersonTypeEnums.personType getType(){
         return this.type;
     }     
 }

@@ -14,7 +14,7 @@ public class AppTest
 {
 
     
-    //Person daniel;
+    static Person daniel;
     static Homestead nkandla;
 
 
@@ -22,7 +22,7 @@ public class AppTest
     @BeforeClass 
     public static void initPerson()
     {
-        //daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
+        daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
     }
 
@@ -53,7 +53,7 @@ public class AppTest
     @Test
     public void testPersonAge()
     {
-        assertEquals(10, daniel.getName());
+        assertEquals(10, daniel.getAge());
     }
 
     @Test
@@ -65,7 +65,7 @@ public class AppTest
     @Test
     public void testPersonType()
     {
-        assertEquals(PersonTypeEnums.personType.Architect, daniel.getPersonType());
+        assertEquals(PersonTypeEnums.personType.Architect, daniel.getType());
     }
 
     @Test
