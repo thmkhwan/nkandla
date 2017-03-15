@@ -4,37 +4,41 @@ import java.io.IOException;
 
 public class Nkandla extends Homestead
 {
-    private String swimmingPool;
-    private String chickenRun;
-    private String amphitheater;
+    private SwimmingPool swimmingPool;
+    private ChickenRun chickenRun;
+    private Amphitheatre amphitheatre;
 
-    public Nkandla(String name, String district, String province, String country){
+    public Nkandla(String name, String district, String province, String country, SwimmingPool swimmingPool, ChickenRun chickenRun, Amphitheatre amphitheatre){
         super(name, district, province, country);
+
+        this.swimmingPool = swimmingPool;
+        this.chickenRun = chickenRun;
+        this.amphitheatre = amphitheatre;
     }
 
 //Sets
-    public void setSwimmingPool(String sPool){
+    public void setSwimmingPool(SwimmingPool sPool){
         this.swimmingPool = sPool;
     }
 
-    public void setChickenRun(String cRun){
+    public void setChickenRun(ChickenRun cRun){
         this.chickenRun = cRun;
     }
 
-    public void setAmphitheater(String aTheater){
-        this.amphitheater = aTheater;
+    public void setAmphitheatre(Amphitheatre aTheatre){
+        this.amphitheatre = aTheatre;
     }
 //Gets
-    public String getSwimmingPool(){
+    public SwimmingPool getSwimmingPool(){
         return this.swimmingPool;
     }
 
-    public String getChickenRun(){
+    public ChickenRun getChickenRun(){
         return this.chickenRun;
     }
 
-    public String getAmphitheater(){
-        return this.amphitheater;
+    public Amphitheatre getAmphitheatre(){
+        return this.amphitheatre;
     }
 
 
@@ -58,7 +62,5 @@ public class Nkandla extends Homestead
         }
 
         return "";
-		
-		
 	}
 }

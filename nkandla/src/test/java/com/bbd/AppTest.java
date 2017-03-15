@@ -22,9 +22,9 @@ public class AppTest
 	static Politician frik;
     static Chicken henryTheChicken;
     static Nkandla nkandlahome;
-    static SwimmingPool mainPool;
+    static SwimmingPool pool;
     static ChickenRun chickenRun;
-    static Amphitheatre mainAmphitheatre;
+    static Amphitheatre amphitheatre;
 
     @BeforeClass 
     public static void initPerson()
@@ -43,10 +43,11 @@ public class AppTest
 
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
 
-        mainPool = new SwimmingPool(true, "Colossal");
+        pool = new SwimmingPool(true, "Colossal");
         
-        mainAmphitheatre = new Amphitheatre("One thousand and thirteen and two");
-        nkandlahome = new Nkandla("Nkandla", "9", "KZN", "South Africa");
+        amphitheatre = new Amphitheatre("One thousand and thirteen and two");
+
+        nkandlahome = new Nkandla("Nkandla", "9", "KZN", "South Africa", pool, chickenRun, amphitheatre);
     }
 
     @Test
@@ -159,13 +160,13 @@ public class AppTest
     @Test
     public void testSwimmingPoolNeedsHTH()
     {
-        assertEquals(true, mainPool.getNeedsHTH());
+        assertEquals(true, pool.getNeedsHTH());
     }
 
     @Test
     public void testSwimmingPoolSize()
     {
-        assertEquals("Colossal", mainPool.getSize());
+        assertEquals("Colossal", pool.getSize());
     }
 
     @Test
@@ -195,6 +196,21 @@ public class AppTest
     @Test
 	public void testAmphitheatreNumSeats()
 	{
-		assertEquals("One thousand and thirteen and two", mainAmphitheatre.getNumSeats());
+		assertEquals("One thousand and thirteen and two", amphitheatre.getNumSeats());
+	}
+
+    public void testNkandlaSwimmingPool()
+	{
+		assertEquals(true, nkandlahome.getSwimmingPool().getNeedsHTH());
+	}
+
+    public void testNkandlaChickenRun()
+	{
+		assertEquals("Bill", nkandlahome.getChickenRun().getChicken(1).getName());
+	}
+
+    public void testNkandlaAmphitheatre()
+	{
+		assertEquals("One thousand and thirteen and two", nkandlahome.getAmphitheatre().getNumSeats());
 	}
 }
