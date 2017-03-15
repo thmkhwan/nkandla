@@ -19,6 +19,7 @@ public class AppTest
     static Person daniel;
 	static Person rob;
     static Homestead nkandla;
+	static Politician frik;
     static Chicken henryTheChicken;
     static SwimmingPool mainPool;
     static ChickenRun chickenRun;
@@ -34,6 +35,7 @@ public class AppTest
         daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
 		rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
+		frik = new Politician(5, "Pink Fluffy Unicorns","Frik", 29, "Male", PersonTypeEnums.personType.Other);
         mainPool = new SwimmingPool(true, "Colossal");
         chickenRun = new ChickenRun(chickens);
     }
@@ -168,4 +170,16 @@ public class AppTest
     {
         assertEquals(4, chickenRun.getNumChickens());
     }
+    
+	@Test
+	public void testPoliticianParty()
+	{
+		assertEquals("Pink Fluffy Unicorns", frik.getParty());
+	}
+	
+	@Test
+	public void testPoliticianCLvl()
+	{
+		assertEquals(5, frik.getCorrLvl());
+	}
 }
