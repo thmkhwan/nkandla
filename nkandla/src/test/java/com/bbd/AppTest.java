@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.BeforeClass;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 //import junit.framework.Test;
 
@@ -17,17 +19,33 @@ public class AppTest
     static Person daniel;
 	static Person rob;
     static Homestead nkandla;
+	static Politician frik;
     static Chicken henryTheChicken;
     static Nkandla nkandlahome;
-
+    static SwimmingPool mainPool;
+    static ChickenRun chickenRun;
+    static Amphitheatre mainAmphitheatre;
 
     @BeforeClass 
     public static void initPerson()
     {
-        daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
-        nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
         henryTheChicken = new Chicken("Henry", 47, "Male", "Brown");
-		rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
+
+        Chicken bobTheChicken = new Chicken("Bob", 10, "Male", "White");
+        Chicken billTheChicken = new Chicken("Bill", 73, "Male", "Black");
+        Chicken jennyTheChicken = new Chicken("Jenny", 12, "Female", "Purple");
+        ArrayList<Chicken> chickens = new ArrayList<Chicken>(Arrays.asList(bobTheChicken, billTheChicken, jennyTheChicken));
+        chickenRun = new ChickenRun(chickens);
+
+        daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
+        rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
+		frik = new Politician(5, "Pink Fluffy Unicorns","Frik", 29, "Male", PersonTypeEnums.personType.Other);
+
+        nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
+
+        mainPool = new SwimmingPool(true, "Colossal");
+        
+        mainAmphitheatre = new Amphitheatre("One thousand and thirteen and two");
         nkandlahome = new Nkandla("Nkandla", "9", "KZN", "South Africa");
     }
 
@@ -137,5 +155,46 @@ public class AppTest
 	{
 		assertEquals("You are not a President, Go Away", nkandlahome.AcceptVisitor(daniel));
 	}
+
+    @Test
+    public void testSwimmingPoolNeedsHTH()
+    {
+        assertEquals(true, mainPool.getNeedsHTH());
+    }
+
+    @Test
+    public void testSwimmingPoolSize()
+    {
+        assertEquals("Colossal", mainPool.getSize());
+    }
+
+    @Test
+	public void testChickenRunSecondChicken()
+	{
+		assertEquals("Bill", chickenRun.getChicken(1).getName());
+	}
+
+    @Test
+    public void testChickenRunNumChickens()
+    {
+        assertEquals(3, chickenRun.getNumChickens());
+    }
+    
+	@Test
+	public void testPoliticianParty()
+	{
+		assertEquals("Pink Fluffy Unicorns", frik.getParty());
+	}
 	
+	@Test
+	public void testPoliticianCLvl()
+	{
+		assertEquals(5, frik.getCorrLvl());
+	}
+
+    @Test
+	public void testAmphitheatreNumSeats()
+	{
+		assertEquals("One thousand and thirteen and two", mainAmphitheatre.getNumSeats());
+	}
 }
