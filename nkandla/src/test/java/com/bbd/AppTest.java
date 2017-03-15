@@ -6,8 +6,6 @@ import org.junit.Test;
 import org.junit.BeforeClass;
 
 //import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 /**
  * Unit test for simple App.
@@ -17,85 +15,80 @@ public class AppTest
 
     
     //Person daniel;
-    Homestead nkandla;
+    static Homestead nkandla;
 
 
 
     @BeforeClass 
-    public void initPerson()
+    public static void initPerson()
     {
         //daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
-    }
-
-    @BeforeClass 
-    public void initHomestead()
-    {
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
     }
 
-    @test
+    @Test
     public void testEnumsPres()
     {
         assertEquals(0, PersonTypeEnums.personType.President.rank);
     }
 
-    @test
+    @Test
     public void testEnumsLaw()
     {
         assertEquals(1, PersonTypeEnums.personType.Lawyer.rank);
     }
 
-    @test
+    @Test
     public void testEnumsArc()
     {
         assertEquals(2, PersonTypeEnums.personType.Architect.rank);
     }
 /*
-    @test
+    @Test
     public void testPersonName()
     {
         assertEquals("Daniel", daniel.getName());
     }
 
-    @test
+    @Test
     public void testPersonAge()
     {
         assertEquals(10, daniel.getName());
     }
 
-    @test
+    @Test
     public void testPersonGender()
     {
         assertEquals("Male", daniel.getGender());
     }
 
-    @test
+    @Test
     public void testPersonType()
     {
         assertEquals(PersonTypeEnums.personType.Architect, daniel.getPersonType());
     }
 */
-    @test
+    @Test
     public void testHSName()
     {
-        assertEquals("Nkandla", Homestead.getName());
+        assertEquals("Nkandla", nkandla.getName());
     }
 
-    @test
+    @Test
     public void testHSDist()
     {
-        assertEquals("9", Homestead.getDistrict());
+        assertEquals("9", nkandla.getDistrict());
     }
 
-    @test
+    @Test
     public void testHSProv()
     {
-        assertEquals("KZN", Homestead.getProvince());
+        assertEquals("KZN", nkandla.getProvince());
     }
 
-    @test
+    @Test
     public void testHSCountry()
     {
-        assertEquals("South Africa", Homestead.getCountry());
+        assertEquals("South Africa", nkandla.getCountry());
     }
 }
