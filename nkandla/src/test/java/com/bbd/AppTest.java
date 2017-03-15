@@ -16,7 +16,7 @@ public class AppTest
     
     static Person daniel;
     static Homestead nkandla;
-
+    static Chicken henryTheChicken;
 
 
     @BeforeClass 
@@ -24,6 +24,7 @@ public class AppTest
     {
         daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
+        henryTheChicken = new Chicken("Henry", 47, "Male", "Brown");
     }
 
     @Test
@@ -66,6 +67,35 @@ public class AppTest
     public void testPersonType()
     {
         assertEquals(PersonTypeEnums.personType.Architect, daniel.getType());
+    }
+
+    @Test
+    public void testChickenName()
+    {
+        assertEquals("Henry", henryTheChicken.getName());
+    }
+
+    @Test
+    public void testChickenAge()
+    {
+        assertEquals(47, henryTheChicken.getAge());
+    }
+
+    @Test
+    public void testChickenGender()
+    {
+        assertEquals("Male", henryTheChicken.getGender());
+    }
+
+    @Test
+    public void testChickenColor()
+    {
+        assertEquals("Brown", henryTheChicken.getColor());
+    }
+
+    @Test
+    public void testChickenCluck(){
+        assertEquals("Henry goes cluck", henryTheChicken.cluck());
     }
 
     @Test
