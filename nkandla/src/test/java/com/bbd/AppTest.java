@@ -17,6 +17,7 @@ public class AppTest
     static Person daniel;
 	static Person rob;
     static Homestead nkandla;
+	static Politician frik;
 
 
 
@@ -26,6 +27,7 @@ public class AppTest
         daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
 		rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
+		frik = new Politician(5, "Pink Fluffy Unicorns","Frik", 29, "Male", PersonTypeEnums.personType.Other);
     }
 
     @Test
@@ -104,6 +106,18 @@ public class AppTest
 	public void testHSEntryNonPres()
 	{
 		assertEquals(false, nkandla.AcceptVisitor(daniel));
+	}
+	
+	@Test
+	public void testPoliticianParty()
+	{
+		assertEquals("Pink Fluffy Unicorns", frik.getParty());
+	}
+	
+	@Test
+	public void testPoliticianCLvl()
+	{
+		assertEquals(5, frik.getCorrLvl());
 	}
 	
 }
