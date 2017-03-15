@@ -1,6 +1,6 @@
 package com.bbd;
 
-public class Homestead
+public class Homestead 
 {
 
     private String name;
@@ -58,16 +58,9 @@ public class Homestead
         return this.country;
     }
 	
-	
-	public boolean AcceptVisitor(Person peep)
-	{
-		if (peep.getType() == PersonTypeEnums.personType.President)
-		{
-			return true;
-		} else {
-			return false;
-		}
-		
-	}
+	 public void accept(Visitor visitor) {
+        if (visitor != null)
+            visitor.visit(this);
+    }
 	
 }
