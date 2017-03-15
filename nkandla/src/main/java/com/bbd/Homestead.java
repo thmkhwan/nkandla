@@ -57,4 +57,17 @@ public class Homestead
     {
         return this.country;
     }
+	
+	
+	public boolean AcceptVisitor(Person peep)
+	{
+		if (peep.getType() == PersonTypeEnums.personType.President)
+		{
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+	
 }

@@ -15,6 +15,7 @@ public class AppTest
 
     
     static Person daniel;
+	static Person rob;
     static Homestead nkandla;
 
 
@@ -24,6 +25,7 @@ public class AppTest
     {
         daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
+		rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
     }
 
     @Test
@@ -91,6 +93,20 @@ public class AppTest
     {
         assertEquals("South Africa", nkandla.getCountry());
     }
+	
+	@Test
+	public void testHSEntryPres()
+	{
+		assertEquals(true, nkandla.AcceptVisitor(rob));
+	}
+	
+	@Test
+	public void testHSEntryNonPres()
+	{
+		assertEquals(false, nkandla.AcceptVisitor(daniel));
+	}
+	
+}
 
     @Test
 
