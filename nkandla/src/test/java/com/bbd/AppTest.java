@@ -1,100 +1,94 @@
 package com.bbd;
 
-import org.junit.Before;
+import static org.junit.Assert.*;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
+import org.junit.BeforeClass;
+
+//import junit.framework.Test;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
+
+    
+    //Person daniel;
+    static Homestead nkandla;
+
+
+
+    @BeforeClass 
+    public static void initPerson()
     {
-        super( testName );
+        //daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
+        nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
+    @Test
     public void testEnumsPres()
     {
         assertEquals(0, PersonTypeEnums.personType.President.rank);
     }
 
+    @Test
     public void testEnumsLaw()
     {
         assertEquals(1, PersonTypeEnums.personType.Lawyer.rank);
     }
 
+    @Test
     public void testEnumsArc()
     {
         assertEquals(2, PersonTypeEnums.personType.Architect.rank);
     }
-
-    Person daniel;
-    Homestead nkandla;
-
-    @Before public void initPerson()
-    {
-        daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
-    }
-
-    @Before public void initHomestead()
-    {
-        nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
-    }
-
+/*
+    @Test
     public void testPersonName()
     {
-        asserEquals("Daniel", daniel.getName());
+        assertEquals("Daniel", daniel.getName());
     }
 
+    @Test
     public void testPersonAge()
     {
-        asserEquals(10, daniel.getName());
+        assertEquals(10, daniel.getName());
     }
 
+    @Test
     public void testPersonGender()
     {
-        asserEquals("Male", daniel.getGender());
+        assertEquals("Male", daniel.getGender());
     }
 
+    @Test
     public void testPersonType()
     {
         assertEquals(PersonTypeEnums.personType.Architect, daniel.getPersonType());
     }
-
+*/
+    @Test
     public void testHSName()
     {
-        assertEquals("Nkandla", Homestead.getName());
+        assertEquals("Nkandla", nkandla.getName());
     }
 
+    @Test
     public void testHSDist()
     {
-        assertEquals("9", Homestead.getDistrict());
+        assertEquals("9", nkandla.getDistrict());
     }
 
+    @Test
     public void testHSProv()
     {
-        assertEquals("KZN", Homestead.getProvince());
+        assertEquals("KZN", nkandla.getProvince());
     }
 
+    @Test
     public void testHSCountry()
     {
-        assertEquals("South Africa", Homestead.getCountry());
+        assertEquals("South Africa", nkandla.getCountry());
     }
 }
