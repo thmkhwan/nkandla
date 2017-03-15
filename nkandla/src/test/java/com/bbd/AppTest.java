@@ -43,7 +43,7 @@ public class AppTest
     {
         assertEquals(2, PersonTypeEnums.personType.Architect.rank);
     }
-/*
+
     @Test
     public void testPersonName()
     {
@@ -67,7 +67,7 @@ public class AppTest
     {
         assertEquals(PersonTypeEnums.personType.Architect, daniel.getPersonType());
     }
-*/
+
     @Test
     public void testHSName()
     {

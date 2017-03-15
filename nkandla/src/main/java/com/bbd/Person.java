@@ -15,6 +15,7 @@ public class Person {
 
     }
 
+//Sets
     public void setName(String n){
         this.name = n;
     }
@@ -31,6 +32,7 @@ public class Person {
         this.type = t;
     } 
 
+//Gets
     public String getName(){
         return this.name;
     }
