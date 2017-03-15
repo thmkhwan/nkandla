@@ -2,5 +2,7 @@ com\bbd\Person.class
 com\bbd\Politician.class
 com\bbd\Homestead.class
 com\bbd\PersonTypeEnums$personType.class
+com\bbd\Chicken.class
+com\bbd\SwimmingPool.class
 com\bbd\PersonTypeEnums.class
 com\bbd\App.class

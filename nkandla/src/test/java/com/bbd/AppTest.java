@@ -18,16 +18,18 @@ public class AppTest
 	static Person rob;
     static Homestead nkandla;
 	static Politician frik;
-
-
+    static Chicken henryTheChicken;
+    static SwimmingPool mainPool;
 
     @BeforeClass 
     public static void initPerson()
     {
         daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
+        henryTheChicken = new Chicken("Henry", 47, "Male", "Brown");
 		rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
 		frik = new Politician(5, "Pink Fluffy Unicorns","Frik", 29, "Male", PersonTypeEnums.personType.Other);
+        mainPool = new SwimmingPool(true, "Colossal");
     }
 
     @Test
@@ -73,6 +75,35 @@ public class AppTest
     }
 
     @Test
+    public void testChickenName()
+    {
+        assertEquals("Henry", henryTheChicken.getName());
+    }
+
+    @Test
+    public void testChickenAge()
+    {
+        assertEquals(47, henryTheChicken.getAge());
+    }
+
+    @Test
+    public void testChickenGender()
+    {
+        assertEquals("Male", henryTheChicken.getGender());
+    }
+
+    @Test
+    public void testChickenColor()
+    {
+        assertEquals("Brown", henryTheChicken.getColor());
+    }
+
+    @Test
+    public void testChickenCluck(){
+        assertEquals("Henry goes cluck", henryTheChicken.cluck());
+    }
+
+    @Test
     public void testHSName()
     {
         assertEquals("Nkandla", nkandla.getName());
@@ -107,7 +138,18 @@ public class AppTest
 	{
 		assertEquals(false, nkandla.AcceptVisitor(daniel));
 	}
-	
+
+    @Test
+    public void testSwimmingPoolNeedsHTH()
+    {
+        assertEquals(true, mainPool.getNeedsHTH());
+    }
+
+    @Test
+    public void testSwimmingPoolSize()
+    {
+        assertEquals("Colossal", mainPool.getSize());
+    }
 	@Test
 	public void testPoliticianParty()
 	{
