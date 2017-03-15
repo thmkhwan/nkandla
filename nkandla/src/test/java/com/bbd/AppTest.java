@@ -1,8 +1,11 @@
 package com.bbd;
 
-import org.junit.Before;
+import static org.junit.Assert.*;
 
-import junit.framework.Test;
+import org.junit.Test;
+import org.junit.BeforeClass;
+
+//import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
@@ -10,89 +13,87 @@ import junit.framework.TestSuite;
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
+
+    
+    //Person daniel;
+    Homestead nkandla;
+
+
+
+    @BeforeClass 
+    public void initPerson()
     {
-        super( testName );
+        //daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
+    @BeforeClass 
+    public void initHomestead()
     {
-        return new TestSuite( AppTest.class );
+        nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
     }
 
+    @test
     public void testEnumsPres()
     {
         assertEquals(0, PersonTypeEnums.personType.President.rank);
     }
 
+    @test
     public void testEnumsLaw()
     {
         assertEquals(1, PersonTypeEnums.personType.Lawyer.rank);
     }
 
+    @test
     public void testEnumsArc()
     {
         assertEquals(2, PersonTypeEnums.personType.Architect.rank);
     }
-
-    Person daniel;
-    Homestead nkandla;
-
-    @Before public void initPerson()
-    {
-        daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
-    }
-
-    @Before public void initHomestead()
-    {
-        nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
-    }
-
+/*
+    @test
     public void testPersonName()
     {
-        asserEquals("Daniel", daniel.getName());
+        assertEquals("Daniel", daniel.getName());
     }
 
+    @test
     public void testPersonAge()
     {
-        asserEquals(10, daniel.getName());
+        assertEquals(10, daniel.getName());
     }
 
+    @test
     public void testPersonGender()
     {
-        asserEquals("Male", daniel.getGender());
+        assertEquals("Male", daniel.getGender());
     }
 
+    @test
     public void testPersonType()
     {
         assertEquals(PersonTypeEnums.personType.Architect, daniel.getPersonType());
     }
-
+*/
+    @test
     public void testHSName()
     {
         assertEquals("Nkandla", Homestead.getName());
     }
 
+    @test
     public void testHSDist()
     {
         assertEquals("9", Homestead.getDistrict());
     }
 
+    @test
     public void testHSProv()
     {
         assertEquals("KZN", Homestead.getProvince());
     }
 
+    @test
     public void testHSCountry()
     {
         assertEquals("South Africa", Homestead.getCountry());
