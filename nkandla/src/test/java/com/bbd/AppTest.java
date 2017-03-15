@@ -91,4 +91,11 @@ public class AppTest
     {
         assertEquals("South Africa", nkandla.getCountry());
     }
+
+    @Test
+
+    public void testVisit()
+    {
+        assertEquals(expected, actual);
+    }
 }
