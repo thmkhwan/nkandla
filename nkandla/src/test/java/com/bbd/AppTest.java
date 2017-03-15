@@ -27,11 +27,11 @@ public class AppTest
     @BeforeClass 
     public static void initPerson()
     {
-        Chicken henryTheChicken = new Chicken("Henry", 47, "Male", "Brown");
+        henryTheChicken = new Chicken("Henry", 47, "Male", "Brown");
         Chicken bobTheChicken = new Chicken("Bob", 10, "Male", "White");
         Chicken billTheChicken = new Chicken("Bill", 73, "Male", "Black");
         Chicken jennyTheChicken = new Chicken("Jenny", 12, "Female", "Purple");
-        ArrayList<Chicken> chickens = new ArrayList<Chicken>(Arrays.asList(henryTheChicken, bobTheChicken, billTheChicken, jennyTheChicken));
+        ArrayList<Chicken> chickens = new ArrayList<Chicken>(Arrays.asList(bobTheChicken, billTheChicken, jennyTheChicken));
         daniel = new Person("Daniel", 10, "Male", PersonTypeEnums.personType.Architect);
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
 		rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
@@ -162,13 +162,13 @@ public class AppTest
     @Test
 	public void testChickenRunSecondChicken()
 	{
-		assertEquals("Bill", chickenRun.getChicken(2).getName());
+		assertEquals("Bill", chickenRun.getChicken(1).getName());
 	}
 
     @Test
     public void testChickenRunNumChickens()
     {
-        assertEquals(4, chickenRun.getNumChickens());
+        assertEquals(3, chickenRun.getNumChickens());
     }
     
 	@Test
