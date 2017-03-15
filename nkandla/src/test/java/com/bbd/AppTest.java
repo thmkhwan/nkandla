@@ -18,7 +18,7 @@ public class AppTest
 	static Person rob;
     static Homestead nkandla;
     static Chicken henryTheChicken;
-
+    static SwimmingPool mainPool;
 
     @BeforeClass 
     public static void initPerson()
@@ -27,6 +27,7 @@ public class AppTest
         nkandla = new Homestead("Nkandla", "9", "KZN", "South Africa");
         henryTheChicken = new Chicken("Henry", 47, "Male", "Brown");
 		rob = new Person("Robert", 107, "Male", PersonTypeEnums.personType.President);
+        mainPool = new SwimmingPool(true, "Colossal");
     }
 
     @Test
@@ -135,5 +136,16 @@ public class AppTest
 	{
 		assertEquals(false, nkandla.AcceptVisitor(daniel));
 	}
-	
+
+    @Test
+    public void testSwimmingPoolNeedsHTH()
+    {
+        assertEquals(true, mainPool.getNeedsHTH());
+    }
+
+    @Test
+    public void testSwimmingPoolSize()
+    {
+        assertEquals("Colossal", mainPool.getSize());
+    }
 }
